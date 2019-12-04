@@ -72,7 +72,11 @@
       </dt>
       <!-- Display group_id start -->
       <dd>
-        <%= @user.group_id %>
+        <% if @user.group.present? %>
+          <a href="/groups/<%= @user.group_id %>">
+            <%= @user.group.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display group_id end -->
 

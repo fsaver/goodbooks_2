@@ -74,7 +74,11 @@
 
         <!-- Display group.review_access_id start -->
         <td>
-          <%= group.review_access.user_id %>
+          <% if group.review_access.present? %>
+            <a href="/reviews/<%= group.review_access.id %>">
+              <%= group.review_access.user_id %>
+            </a>
+          <% end %>
         </td>
         <!-- Display group.review_access_id end -->
 

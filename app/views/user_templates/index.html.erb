@@ -104,7 +104,11 @@
 
         <!-- Display user.group_id start -->
         <td>
-          <%= user.group.name %>
+          <% if user.group.present? %>
+            <a href="/groups/<%= user.group.id %>">
+              <%= user.group.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display user.group_id end -->
 

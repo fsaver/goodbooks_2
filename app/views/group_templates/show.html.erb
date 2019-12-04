@@ -52,7 +52,11 @@
       </dt>
       <!-- Display review_access_id start -->
       <dd>
-        <%= @group.review_access_id %>
+        <% if @group.review_access.present? %>
+          <a href="/reviews/<%= @group.review_access_id %>">
+            <%= @group.review_access.user_id %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display review_access_id end -->
 
