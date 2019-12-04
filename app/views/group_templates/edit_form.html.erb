@@ -39,7 +39,7 @@
     </label>
 
     <!-- Input for review_access_id start -->
-    <input type="text" id="review_access_id" name="review_access_id" class="form-control" value="<%= @group.review_access_id %>">
+    <%= select_tag(:review_access_id, options_from_collection_for_select(Review.all, :id, :user_id, @group.review_access_id), :class => "form-control") %>
     <!-- Input for review_access_id end -->
   </div>
   <!-- Label and input for review_access_id end -->
