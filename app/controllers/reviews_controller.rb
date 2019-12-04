@@ -61,6 +61,22 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @review = Review.find(params.fetch("id_to_remove"))
+
+    @review.destroy
+
+    redirect_to("/users/#{@review.user_id}", notice: "Review deleted successfully.")
+  end
+
+  def destroy_row_from_book
+    @review = Review.find(params.fetch("id_to_remove"))
+
+    @review.destroy
+
+    redirect_to("/books/#{@review.book_id}", notice: "Review deleted successfully.")
+  end
+
   def destroy_row
     @review = Review.find(params.fetch("id_to_remove"))
 

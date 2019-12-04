@@ -55,6 +55,14 @@ class GroupsController < ApplicationController
     end
   end
 
+  def destroy_row_from_review_access
+    @group = Group.find(params.fetch("id_to_remove"))
+
+    @group.destroy
+
+    redirect_to("/reviews/#{@group.review_access_id}", notice: "Group deleted successfully.")
+  end
+
   def destroy_row
     @group = Group.find(params.fetch("id_to_remove"))
 
