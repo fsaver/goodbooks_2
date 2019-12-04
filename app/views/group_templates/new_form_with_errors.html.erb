@@ -1,0 +1,68 @@
+<!-- Validation failure messages -->
+<% if @group.present? %>
+  <% if @group.errors.any? %>
+    <% @group.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new group
+</h1>
+
+
+<hr>
+
+<!-- Form group start -->
+<form action="/create_group" method="post">
+<!-- Form group end -->
+
+  <!-- Label and input for name start -->
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <!-- Input for name start -->
+    <input type="text" id="name" name="name" class="form-control" value="<%= @group.name %>">
+    <!-- Input for name end -->
+  </div>
+  <!-- Label and input for name end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @group.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for review_access_id start -->
+  <div class="form-group">
+    <label for="review_access_id">
+      Review access
+    </label>
+
+    <!-- Input for review_access_id start -->
+    <input type="text" id="review_access_id" name="review_access_id" class="form-control" value="<%= @group.review_access_id %>">
+    <!-- Input for review_access_id end -->
+  </div>
+  <!-- Label and input for review_access_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create group
+  </button>
+</form>
+
+<hr>
+
+<a href="/groups">
+  Go back
+</a>
