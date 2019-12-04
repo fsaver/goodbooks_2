@@ -6,6 +6,7 @@ class GroupsController < ApplicationController
   end
 
   def show
+    @user = User.new
     @group = Group.find(params.fetch("id_to_display"))
 
     render("group_templates/show.html.erb")
@@ -28,6 +29,22 @@ class GroupsController < ApplicationController
       @group.save
 
       redirect_back(:fallback_location => "/groups", :notice => "Group created successfully.")
+    else
+      render("group_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_review
+    @group = Group.new
+
+    @group.name = params.fetch("name")
+    @group.user_id = params.fetch("user_id")
+    @group.review_access_id = params.fetch("review_access_id")
+
+    if @group.valid?
+      @group.save
+
+      redirect_to("/reviews/#{@group.review_access_id}", notice: "Group created successfully.")
     else
       render("group_templates/new_form_with_errors.html.erb")
     end

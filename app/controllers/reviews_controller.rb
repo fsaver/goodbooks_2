@@ -6,6 +6,7 @@ class ReviewsController < ApplicationController
   end
 
   def show
+    @group = Group.new
     @review = Review.find(params.fetch("id_to_display"))
 
     render("review_templates/show.html.erb")
@@ -31,6 +32,25 @@ class ReviewsController < ApplicationController
       @review.save
 
       redirect_back(:fallback_location => "/reviews", :notice => "Review created successfully.")
+    else
+      render("review_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_book
+    @review = Review.new
+
+    @review.user_id = params.fetch("user_id")
+    @review.book_id = params.fetch("book_id")
+    @review.format = params.fetch("format")
+    @review.pages_read = params.fetch("pages_read")
+    @review.rating = params.fetch("rating")
+    @review.review = params.fetch("review")
+
+    if @review.valid?
+      @review.save
+
+      redirect_to("/books/#{@review.book_id}", notice: "Review created successfully.")
     else
       render("review_templates/new_form_with_errors.html.erb")
     end

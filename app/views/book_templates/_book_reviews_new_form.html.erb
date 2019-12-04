@@ -1,0 +1,73 @@
+<!-- Form review start -->
+<form action="/create_review_from_book" method="post">
+<!-- Form review end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @review.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for book_id start -->
+  <!-- Input for book_id start -->
+  <input type="hidden" name="book_id" value="<%= @book.id %>">
+  <!-- Input for book_id end -->
+
+  <!-- Label and input for format start -->
+  <div class="form-group">
+    <label for="format">
+      Format
+    </label>
+
+    <!-- Input for format start -->
+    <input type="text" id="format" name="format" class="form-control" value="<%= @review.format %>">
+    <!-- Input for format end -->
+  </div>
+  <!-- Label and input for format end -->
+
+  <!-- Label and input for pages_read start -->
+  <div class="form-group">
+    <label for="pages_read">
+      Pages read
+    </label>
+
+    <!-- Input for pages_read start -->
+    <input type="text" id="pages_read" name="pages_read" class="form-control" value="<%= @review.pages_read %>">
+    <!-- Input for pages_read end -->
+  </div>
+  <!-- Label and input for pages_read end -->
+
+  <!-- Label and input for rating start -->
+  <div class="form-group">
+    <label for="rating">
+      Rating
+    </label>
+
+    <!-- Input for rating start -->
+    <input type="text" id="rating" name="rating" class="form-control" value="<%= @review.rating %>">
+    <!-- Input for rating end -->
+  </div>
+  <!-- Label and input for rating end -->
+
+  <!-- Label and input for review start -->
+  <div class="form-group">
+    <label for="review">
+      Review
+    </label>
+
+    <!-- Input for review start -->
+    <textarea id="review" name="review" class="form-control" rows="3"><%= @review.review %></textarea>
+    <!-- Input for review end -->
+  </div>
+  <!-- Label and input for review end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create review
+  </button>
+</form>
