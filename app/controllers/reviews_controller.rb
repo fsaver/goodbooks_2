@@ -65,7 +65,7 @@ class ReviewsController < ApplicationController
   def update_row
     @review = Review.find(params.fetch("id_to_modify"))
 
-    @review.user_id = params.fetch("user_id")
+    
     @review.book_id = params.fetch("book_id")
     @review.format = params.fetch("format")
     @review.pages_read = params.fetch("pages_read")
