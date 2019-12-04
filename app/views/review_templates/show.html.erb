@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link review start -->
       <div class="col">
         <% if current_user == @review.user %>
           <a href="/reviews/<%= @review.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link review end -->
 
-      <!-- Delete link review start -->
       <div class="col">
         <% if current_user == @review.user %>
           <a href="/delete_review/<%= @review.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,14 +26,12 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link review end -->
     </div>
 
     <dl>
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @review.user.present? %>
           <a href="/users/<%= @review.user_id %>">
@@ -44,12 +39,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Book
       </dt>
-      <!-- Display book_id start -->
       <dd>
         <% if @review.book.present? %>
           <a href="/books/<%= @review.book_id %>">
@@ -57,69 +50,54 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display book_id end -->
 
       <dt>
         Format
       </dt>
-      <!-- Display format start -->
       <dd>
         <%= @review.format %>
       </dd>
-      <!-- Display format end -->
 
       <dt>
         Pages read
       </dt>
-      <!-- Display pages_read start -->
       <dd>
         <%= @review.pages_read %>
       </dd>
-      <!-- Display pages_read end -->
 
       <dt>
         Rating
       </dt>
-      <!-- Display rating start -->
       <dd>
         <%= @review.rating %>
       </dd>
-      <!-- Display rating end -->
 
       <dt>
         Review
       </dt>
-      <!-- Display review start -->
       <dd>
         <%= @review.review %>
       </dd>
-      <!-- Display review end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@review.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@review.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "review_templates/review_groups" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

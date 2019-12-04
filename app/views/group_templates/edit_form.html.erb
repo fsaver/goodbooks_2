@@ -4,45 +4,31 @@
 
 <hr>
 
-<!-- Form group start -->
 <form action="/update_group/<%= @group.id %>" method="post">
-<!-- Form group end -->
 
-  <!-- Label and input for name start -->
   <div class="form-group">
     <label for="name">
       Name
     </label>
 
-    <!-- Input for name start -->
     <input type="text" id="name" name="name" class="form-control" value="<%= @group.name %>">
-    <!-- Input for name end -->
   </div>
-  <!-- Label and input for name end -->
 
-  <!-- Label and input for user_id start -->
   <div class="form-group">
     <label for="user_id">
       User
     </label>
 
-    <!-- Input for user_id start -->
     <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @group.user_id %>">
-    <!-- Input for user_id end -->
   </div>
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for review_access_id start -->
   <div class="form-group">
     <label for="review_access_id">
       Review access
     </label>
 
-    <!-- Input for review_access_id start -->
     <%= select_tag(:review_access_id, options_from_collection_for_select(Review.all, :id, :user_id, @group.review_access_id), :class => "form-control") %>
-    <!-- Input for review_access_id end -->
   </div>
-  <!-- Label and input for review_access_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update group

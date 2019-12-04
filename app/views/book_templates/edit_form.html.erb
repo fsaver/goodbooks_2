@@ -4,93 +4,63 @@
 
 <hr>
 
-<!-- Form book start -->
 <form action="/update_book/<%= @book.id %>" method="post">
-<!-- Form book end -->
 
-  <!-- Label and input for title start -->
   <div class="form-group">
     <label for="title">
       Title
     </label>
 
-    <!-- Input for title start -->
     <input type="text" id="title" name="title" class="form-control" value="<%= @book.title %>">
-    <!-- Input for title end -->
   </div>
-  <!-- Label and input for title end -->
 
-  <!-- Label and input for author start -->
   <div class="form-group">
     <label for="author">
       Author
     </label>
 
-    <!-- Input for author start -->
     <input type="text" id="author" name="author" class="form-control" value="<%= @book.author %>">
-    <!-- Input for author end -->
   </div>
-  <!-- Label and input for author end -->
 
-  <!-- Label and input for year start -->
   <div class="form-group">
     <label for="year">
       Year
     </label>
 
-    <!-- Input for year start -->
     <input type="text" id="year" name="year" class="form-control" value="<%= @book.year %>">
-    <!-- Input for year end -->
   </div>
-  <!-- Label and input for year end -->
 
-  <!-- Label and input for subject start -->
   <div class="form-group">
     <label for="subject">
       Subject
     </label>
 
-    <!-- Input for subject start -->
     <input type="text" id="subject" name="subject" class="form-control" value="<%= @book.subject %>">
-    <!-- Input for subject end -->
   </div>
-  <!-- Label and input for subject end -->
 
-  <!-- Label and input for pages start -->
   <div class="form-group">
     <label for="pages">
       Pages
     </label>
 
-    <!-- Input for pages start -->
     <input type="text" id="pages" name="pages" class="form-control" value="<%= @book.pages %>">
-    <!-- Input for pages end -->
   </div>
-  <!-- Label and input for pages end -->
 
-  <!-- Label and input for editorial start -->
   <div class="form-group">
     <label for="editorial">
       Editorial
     </label>
 
-    <!-- Input for editorial start -->
     <input type="text" id="editorial" name="editorial" class="form-control" value="<%= @book.editorial %>">
-    <!-- Input for editorial end -->
   </div>
-  <!-- Label and input for editorial end -->
 
-  <!-- Label and input for edition start -->
   <div class="form-group">
     <label for="edition">
       Edition
     </label>
 
-    <!-- Input for edition start -->
     <input type="text" id="edition" name="edition" class="form-control" value="<%= @book.edition %>">
-    <!-- Input for edition end -->
   </div>
-  <!-- Label and input for edition end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update book

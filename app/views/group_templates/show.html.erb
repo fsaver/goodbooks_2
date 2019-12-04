@@ -11,46 +11,37 @@
         </a>
       </div>
 
-      <!-- Edit link group start -->
       <div class="col">
         <a href="/groups/<%= @group.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit group
         </a>
       </div>
-      <!-- Edit link group end -->
 
-      <!-- Delete link group start -->
       <div class="col">
         <a href="/delete_group/<%= @group.id %>" class="btn btn-block btn-outline-secondary">
           Delete group
         </a>
       </div>
-      <!-- Delete link group end -->
     </div>
 
     <dl>
       <dt>
         Name
       </dt>
-      <!-- Display name start -->
       <dd>
         <%= @group.name %>
       </dd>
-      <!-- Display name end -->
 
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <%= @group.user_id %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Review access
       </dt>
-      <!-- Display review_access_id start -->
       <dd>
         <% if @group.review_access.present? %>
           <a href="/reviews/<%= @group.review_access_id %>">
@@ -58,33 +49,26 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display review_access_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@group.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@group.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "group_templates/group_users" %>
   </div>
 </div>
-<!-- Show Page Customization end -->
