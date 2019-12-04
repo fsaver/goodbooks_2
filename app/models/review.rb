@@ -1,6 +1,10 @@
 class Review < ApplicationRecord
   # Direct associations
 
+  has_many   :groups,
+             :foreign_key => "review_access_id",
+             :dependent => :nullify
+
   belongs_to :book,
              :counter_cache => true
 

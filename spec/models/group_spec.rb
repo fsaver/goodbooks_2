@@ -4,6 +4,8 @@ RSpec.describe Group, type: :model do
   
     describe "Direct Associations" do
 
+    it { should belong_to(:review_access) }
+
     end
 
     describe "InDirect Associations" do
