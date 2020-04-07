@@ -19,6 +19,12 @@ class GroupsController < ApplicationController
     render("group_templates/new_form.html.erb")
   end
 
+  def new_form2
+    @group = Group.new
+
+    render("group_templates/new_form.html.erb")
+  end
+
   def create_row
     @group = Group.new
 
