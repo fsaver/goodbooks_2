@@ -2,8 +2,13 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   root :to => "books#index"
-  # Routes for the Group resource:
 
+  # Beta
+  get("/beta", { :controller => "users", :action => "beta" })
+
+
+  # Routes for the Group resource:
+ 
   # CREATE
   get("/groups/new", { :controller => "groups", :action => "new_form" })
   post("/create_group", { :controller => "groups", :action => "create_row" })

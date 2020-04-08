@@ -10,4 +10,9 @@ class UsersController < ApplicationController
 
     render("user_templates/show.html.erb")
   end
+
+    def beta
+    render("user_templates/beta.html.erb")
+  end
+
 end
